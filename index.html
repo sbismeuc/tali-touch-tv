@@ -1,24 +1,80 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>tali-touch-tv</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no" />
+    <title>TaliTV - Simple TV Interface</title>
+    <meta name="description" content="TaliTV - A simple, touch-friendly TV interface for iPad" />
+    <meta name="author" content="TaliTV" />
 
-    <meta property="og:title" content="tali-touch-tv" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <!-- PWA and iPad Optimizations -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="TaliTV" />
+    
+    <!-- Icons for iPad home screen -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/placeholder.svg" />
+    <link rel="icon" type="image/svg+xml" href="/placeholder.svg" />
+    
+    <!-- Prevent zoom on input focus -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="TaliTV - Simple TV Interface" />
+    <meta property="og:description" content="A clean, accessible TV interface optimized for iPad" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta property="og:image" content="/placeholder.svg" />
 
+    <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    <meta name="twitter:title" content="TaliTV" />
+    <meta name="twitter:description" content="Simple TV interface for iPad" />
+    <meta name="twitter:image" content="/placeholder.svg" />
+
+    <style>
+      /* Critical CSS for preventing flash of unstyled content */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-tap-highlight-color: transparent;
+      }
+      
+      #root {
+        min-height: 100vh;
+      }
+      
+      /* Prevent scrolling bounce on iOS */
+      html, body {
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      /* Loading animation */
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        color: white;
+        font-size: 24px;
+      }
+    </style>
   </head>
 
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <div class="loading">Loading TaliTV...</div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
