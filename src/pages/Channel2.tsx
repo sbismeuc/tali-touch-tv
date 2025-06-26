@@ -15,14 +15,15 @@ const Channel2 = () => {
       console.log('Video can play, attempting fullscreen...');
       
       // Try different fullscreen methods for iPad compatibility
-      if (video.webkitEnterFullscreen) {
-        video.webkitEnterFullscreen();
+      const videoElement = video as any;
+      if (videoElement.webkitEnterFullscreen) {
+        videoElement.webkitEnterFullscreen();
       } else if (video.requestFullscreen) {
         video.requestFullscreen().catch(err => {
           console.log('Fullscreen request failed:', err);
         });
-      } else if ((video as any).webkitRequestFullscreen) {
-        (video as any).webkitRequestFullscreen();
+      } else if (videoElement.webkitRequestFullscreen) {
+        videoElement.webkitRequestFullscreen();
       }
     };
 
@@ -72,7 +73,7 @@ const Channel2 = () => {
       </button>
 
       {/* Loading Indicator */}
-      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-green-900 to-emerald-900">
+      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-purple-400 to-pink-400">
         <div className="text-center text-white">
           <div className="animate-spin rounded-full h-20 w-20 border-b-4 border-white mx-auto mb-6"></div>
           <h2 className="text-4xl font-bold mb-2">Loading Spicks & Specks</h2>
@@ -100,9 +101,8 @@ const Channel2 = () => {
       </video>
 
       {/* Channel Info Overlay */}
-      <div className="absolute bottom-6 left-6 bg-black bg-opacity-60 text-white px-6 py-3 rounded-xl backdrop-blur-sm">
+      <div className="absolute bottom-6 left-6 bg-purple-500 bg-opacity-80 text-white px-6 py-3 rounded-xl backdrop-blur-sm">
         <h3 className="text-2xl font-bold">🎵 Spicks & Specks</h3>
-        <p className="text-lg opacity-80">Channel 2</p>
       </div>
     </div>
   );
