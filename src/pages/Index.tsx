@@ -18,14 +18,14 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 flex flex-col items-center justify-center p-6">
+    <div className="safe-fill min-h-screen bg-gradient-to-br from-pink-300 via-purple-300 to-indigo-400 flex flex-col items-center justify-center p-6">
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 drop-shadow-lg">
-          TaliTV
+          Choose your Channel
         </h1>
         <p className="text-2xl md:text-3xl text-pink-100 font-medium">
-          Choose Your Show
+          Select what to watch
         </p>
       </div>
 
@@ -40,9 +40,11 @@ const Index = () => {
                      touch-manipulation select-none"
           style={{ WebkitTapHighlightColor: 'transparent' }}
         >
-          <div className="text-8xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            📺
-          </div>
+          <img 
+            src="/talitv_logo.png" 
+            alt="TaliTV logo"
+            className="h-28 md:h-32 w-auto mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" 
+          />
           <h2 className="text-4xl md:text-5xl font-bold mb-2">TaliTV</h2>
         </button>
 
@@ -55,9 +57,11 @@ const Index = () => {
                      touch-manipulation select-none"
           style={{ WebkitTapHighlightColor: 'transparent' }}
         >
-          <div className="text-8xl mb-6 group-hover:scale-110 transition-transform duration-300">
-            🎵
-          </div>
+          <img 
+            src="/sas_logo.png" 
+            alt="Spicks & Specks logo"
+            className="h-28 md:h-32 w-auto mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" 
+          />
           <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center leading-tight">
             Spicks & Specks
           </h2>
@@ -67,7 +71,7 @@ const Index = () => {
       {/* Footer */}
       <div className="mt-16 text-center">
         <p className="text-pink-100 text-lg md:text-xl">
-          Tap a show to start watching
+          Tap a channel to start watching
         </p>
       </div>
     </div>

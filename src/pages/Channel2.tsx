@@ -27,6 +27,13 @@ const Channel2 = () => {
       }
     };
 
+    const exitHandler = () => {
+      if (!document.fullscreenElement &&
+          !(video as any).webkitDisplayingFullscreen) {
+        navigate('/');
+      }
+    };
+
     const handleError = (e: Event) => {
       console.error('Video error:', e);
       // Auto-return to homepage on error after 3 seconds
@@ -42,6 +49,8 @@ const Channel2 = () => {
     video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('error', handleError);
     video.addEventListener('loadstart', handleLoadStart);
+    video.addEventListener('fullscreenchange', exitHandler);
+    video.addEventListener('webkitendfullscreen', exitHandler);
     
     // Set the stream URL
     video.src = 'http://192.168.4.109:8000/stream/channels/2.m3u8';
@@ -51,6 +60,8 @@ const Channel2 = () => {
       video.removeEventListener('canplay', handleCanPlay);
       video.removeEventListener('error', handleError);
       video.removeEventListener('loadstart', handleLoadStart);
+      video.removeEventListener('fullscreenchange', exitHandler);
+      video.removeEventListener('webkitendfullscreen', exitHandler);
     };
   }, [navigate]);
 
@@ -98,11 +109,12 @@ const Channel2 = () => {
       >
         <source src="http://192.168.4.109:8000/stream/channels/2.m3u8" type="application/x-mpegURL" />
         Your browser does not support HLS video playback.
-      </video>
+      </source>
 
       {/* Channel Info Overlay */}
-      <div className="absolute bottom-6 left-6 bg-purple-500 bg-opacity-80 text-white px-6 py-3 rounded-xl backdrop-blur-sm">
-        <h3 className="text-2xl font-bold">🎵 Spicks & Specks</h3>
+      <div className="absolute bottom-6 left-6 bg-purple-500 bg-opacity-80 text-white px-6 py-3 rounded-xl backdrop-blur-sm flex items-center">
+        <img src="/sas_logo.png" className="h-10 w-10 mr-3" alt="" />
+        <h3 className="text-2xl font-bold">Spicks & Specks</h3>
       </div>
     </div>
   );

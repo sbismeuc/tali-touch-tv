@@ -154,6 +154,12 @@
     touch-action: manipulation;
   }
 
+  /* Safe area utilities for iPad PWA */
+  .safe-fill {
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+
   /* Gradient backgrounds */
   .bg-gradient-tali {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
