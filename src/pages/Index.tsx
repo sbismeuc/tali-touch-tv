@@ -22,15 +22,15 @@ const Index = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-6xl md:text-8xl font-bold text-white mb-4 drop-shadow-lg">
-          Choose your Channel
+          Choose Your Channel
         </h1>
         <p className="text-2xl md:text-3xl text-pink-100 font-medium">
-          Select what to watch
+          Tap one to start watching
         </p>
       </div>
 
       {/* Channel Selection */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl mt-12">
         {/* TaliTV */}
         <button
           onClick={() => handleChannelSelect(1)}
@@ -40,12 +40,11 @@ const Index = () => {
                      touch-manipulation select-none"
           style={{ WebkitTapHighlightColor: 'transparent' }}
         >
-          <img 
-            src="/talitv_logo.png" 
+          <img
+            src="/talitv_logo.png"
             alt="TaliTV logo"
-            className="h-28 md:h-32 w-auto mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" 
+            className="h-28 md:h-32 w-auto mx-auto group-hover:scale-110 transition-transform duration-300"
           />
-          <h2 className="text-4xl md:text-5xl font-bold mb-2">TaliTV</h2>
         </button>
 
         {/* Spicks & Specks */}
@@ -57,22 +56,12 @@ const Index = () => {
                      touch-manipulation select-none"
           style={{ WebkitTapHighlightColor: 'transparent' }}
         >
-          <img 
-            src="/sas_logo.png" 
+          <img
+            src="/sas_logo.png"
             alt="Spicks & Specks logo"
-            className="h-28 md:h-32 w-auto mx-auto mb-6 group-hover:scale-110 transition-transform duration-300" 
+            className="h-28 md:h-32 w-auto mx-auto group-hover:scale-110 transition-transform duration-300"
           />
-          <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center leading-tight">
-            Spicks & Specks
-          </h2>
         </button>
-      </div>
-
-      {/* Footer */}
-      <div className="mt-16 text-center">
-        <p className="text-pink-100 text-lg md:text-xl">
-          Tap a channel to start watching
-        </p>
       </div>
     </div>
   );
