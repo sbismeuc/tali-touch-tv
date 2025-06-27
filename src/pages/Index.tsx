@@ -43,7 +43,7 @@ const Index = () => {
           <img
             src="/talitv_logo.png"
             alt="TaliTV logo"
-            className="h-28 md:h-32 w-auto mx-auto group-hover:scale-110 transition-transform duration-300"
+            className="h-58 md:h-62 w-auto mx-auto group-hover:scale-110 transition-transform duration-300"
           />
         </button>
 
@@ -59,7 +59,7 @@ const Index = () => {
           <img
             src="/sas_logo.png"
             alt="Spicks & Specks logo"
-            className="h-28 md:h-32 w-auto mx-auto group-hover:scale-110 transition-transform duration-300"
+            className="h-58 md:h-62 w-auto mx-auto group-hover:scale-110 transition-transform duration-300"
           />
         </button>
       </div>
