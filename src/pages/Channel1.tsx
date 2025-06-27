@@ -53,7 +53,7 @@ const Channel1 = () => {
     video.addEventListener('webkitendfullscreen', exitHandler);
     
     // Set the stream URL
-    video.src = 'http://192.168.4.109:8000/stream/channels/4.m3u8';
+    video.src = 'https://tv.meridianstem.com/stream/channels/4.m3u8';
     video.load();
 
     return () => {
@@ -70,7 +70,7 @@ const Channel1 = () => {
   };
 
   return (
-    <div className="min-h-screen bg-black flex flex-col items-center justify-center relative">
+    <div className="safe-fill min-h-screen bg-black flex flex-col items-center justify-center relative">
       {/* Back Button Overlay */}
       <button
         onClick={handleBack}
@@ -107,7 +107,7 @@ const Channel1 = () => {
           objectFit: 'cover'
         }}
       >
-        <source src="http://192.168.4.109:8000/stream/channels/4.m3u8" type="application/x-mpegURL" />
+        <source src="https://tv.meridianstem.com/stream/channels/4.m3u8" type="application/x-mpegURL" />
         Your browser does not support HLS video playback.
       </video>
 
